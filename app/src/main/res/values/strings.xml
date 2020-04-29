@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CovidApp</string>
+    <string name="app_name">CovidData</string>
 
     <string-array name="globel_items">
         <item>Total Cases</item>

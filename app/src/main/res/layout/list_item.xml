@@ -14,12 +14,14 @@
 
         <TextView
             android:id="@+id/tv_active"
+            android:textColor="#000"
             android:text="Active - "
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/tv_confirmed"
+            android:textColor="#000"
             android:text="Confirmed - "
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -34,12 +36,14 @@
 
         <TextView
             android:id="@+id/tv_deaths"
+            android:textColor="#000"
             android:text="Deaths - "
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"/>
         <TextView
             android:id="@+id/tv_recovered"
+            android:textColor="#000"
             android:text="Recovered - "
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -48,6 +52,7 @@
 
     <TextView
         android:id="@+id/tv_lastupdatedtime"
+        android:textColor="#000"
         android:layout_marginTop="5dp"
         android:text="Last updated time - "
         android:layout_width="match_parent"
