@@ -17,6 +17,7 @@ class StatePresenter : BasePresenter<StateView>() {
 
     fun onUiReady() {
 
+        mView.displayLoading()
         val timer = object : CountDownTimer(3000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
 

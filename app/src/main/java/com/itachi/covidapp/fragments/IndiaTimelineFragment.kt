@@ -27,10 +27,11 @@ import java.text.DecimalFormat
 
 
 
-class IndiaTimelineFragment : Fragment(),TimelineView,
+class IndiaTimelineFragment(context : Context) : Fragment(),TimelineView,
     TimelineChartView.OnSelectedItemChangedListener,
     TimelineChartView.OnColorPaletteChangedListener {
 
+    val mContext : Context = context
 
     override fun onColorPaletteChanged(palette: IntArray?) {
         val count = mSeriesColors.size
@@ -77,7 +78,7 @@ class IndiaTimelineFragment : Fragment(),TimelineView,
     }
 
     override fun displayError(str: String) {
-        Toast.makeText(getAppContext(),str,Toast.LENGTH_SHORT).show()
+        Toast.makeText(mContext,str,Toast.LENGTH_SHORT).show()
     }
 
     override fun displayLoading() {

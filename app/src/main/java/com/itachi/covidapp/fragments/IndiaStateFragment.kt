@@ -1,7 +1,9 @@
 package com.itachi.covidapp.fragments
 
+import android.app.ProgressDialog
 import android.content.Context
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -20,10 +22,11 @@ import com.itachi.covidapp.mvp.presenters.StatePresenter
 import com.itachi.covidapp.mvp.views.StateView
 import kotlinx.android.synthetic.main.fragment_india_state.*
 
-class IndiaStateFragment : Fragment(),StateView{
+class IndiaStateFragment(context : Context) : Fragment(),StateView{
+
+    val mContext : Context = context
 
     override fun showStateData(data: StatesVO) {
-        Log.d("test---","delhi state data ${data.Delhi.confirmed}")
 
         val voList = ArrayList<StateVO>()
         voList.add(data.Maharashtra)
@@ -63,7 +66,7 @@ class IndiaStateFragment : Fragment(),StateView{
         voList.add(data.Daman_and_Diu)
         voList.add(data.Lakshadweep)
         voList.add(data.Sikkim)
-        expandableListAdapter = CustomExpandableListAdapter(getAppContext(),
+        expandableListAdapter = CustomExpandableListAdapter(mContext,
             resources.getStringArray(R.array.expandable_list_items).toList(),voList)
         expandableListView.setAdapter(expandableListAdapter)
 
@@ -74,10 +77,23 @@ class IndiaStateFragment : Fragment(),StateView{
     }
 
     override fun displayError(str: String) {
-        Toast.makeText(context,str,Toast.LENGTH_SHORT).show()
+        Toast.makeText(mContext,str,Toast.LENGTH_SHORT).show()
     }
 
     override fun displayLoading() {
+        val dialog = ProgressDialog(mContext)
+        dialog.setCancelable(false)
+        val timer = object : CountDownTimer(3000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+
+            }
+
+            override fun onFinish() {
+               dialog.dismiss()
+            }
+        }
+        dialog.show()
+        timer.start()
 
     }
 

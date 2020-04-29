@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
@@ -19,13 +20,11 @@ import com.itachi.covidapp.mvp.presenters.GlobelPresenter
 import com.itachi.covidapp.mvp.views.GlobelView
 import kotlinx.android.synthetic.main.fragment_globel.*
 
-class GlobelFragment : Fragment(),GlobelView {
+class GlobelFragment(context : Context) : Fragment(),GlobelView {
+
+    val mContext : Context = context
 
     override fun onClickItem(countryStatVO: CountryStatVO) {
-//        val key = CountryDetailsBottomSheet.EXTRA_EVENT_ID
-//        val intent = CountryDetailsBottomSheet.newIntent(context!!)
-//        intent.putExtra(key,countryStatVO)
-//        startActivity(intent)
 
         val detailsBottomSheet = CountryDetailsBottomSheet(countryStatVO)
         detailsBottomSheet.show(fragmentManager,"BottomSheetDialog")
@@ -33,7 +32,7 @@ class GlobelFragment : Fragment(),GlobelView {
 
     override fun showCountryStatData(data: ArrayList<CountryStatVO>) {
 
-        val layoutManager = LinearLayoutManager(getAppContext(),LinearLayoutManager.HORIZONTAL,false)
+        val layoutManager = LinearLayoutManager(mContext,LinearLayoutManager.HORIZONTAL,false)
 
         countryRecyclerView = rv_countries
         countryRecyclerAdapter = CountriesRecyclerAdapter(data) {
@@ -60,7 +59,7 @@ class GlobelFragment : Fragment(),GlobelView {
         list.add(data.deaths_per_1m_population)
         list.add(data.statistic_taken_at)
 
-        val layoutManager = GridLayoutManager(getAppContext(), 2)
+        val layoutManager = GridLayoutManager(mContext, 2)
 
         globalRecyclerView = rv_globel
         globalRecyclerAdapter = GlobelRecyclerAdapter(list)
@@ -73,7 +72,7 @@ class GlobelFragment : Fragment(),GlobelView {
     }
 
     override fun displayError(str: String) {
-
+        Toast.makeText(mContext,str,Toast.LENGTH_SHORT).show()
     }
 
     override fun displayLoading() {

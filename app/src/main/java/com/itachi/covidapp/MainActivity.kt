@@ -15,7 +15,20 @@ import com.itachi.covidapp.mvp.views.MainView
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainView,
-    BottomNavigationView.OnNavigationItemSelectedListener{
+    BottomNavigationView.OnNavigationItemSelectedListener, ViewPager.OnPageChangeListener {
+
+    override fun onPageScrollStateChanged(state: Int) {
+
+    }
+
+    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+
+    }
+
+    override fun onPageSelected(position: Int) {
+
+        mNavigationView.getMenu().getItem(position).setChecked(true)
+    }
 
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
         when(p0.itemId) {
@@ -41,9 +54,9 @@ class MainActivity : AppCompatActivity(), MainView,
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val globelFragment = GlobelFragment()
-        val indiaTimelineFragment = IndiaTimelineFragment()
-        val indiaStateFragment = IndiaStateFragment()
+        val globelFragment = GlobelFragment(this)
+        val indiaTimelineFragment = IndiaTimelineFragment(this)
+        val indiaStateFragment = IndiaStateFragment(this)
 
         mPager = vp_globel
         mPagerAdapter = MainPagerAdapter(supportFragmentManager)
@@ -54,6 +67,7 @@ class MainActivity : AppCompatActivity(), MainView,
 
         mNavigationView = bnv_main
         mNavigationView.setOnNavigationItemSelectedListener(this)
+        mPager.setOnPageChangeListener(this)
 
     }
 
