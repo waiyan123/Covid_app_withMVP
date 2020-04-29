@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/bot_nav_globel"
+        android:title="Global"
+        android:icon="@drawable/ic_public_black_24dp"
+        android:iconTint="@color/Grey4"/>
+
+    <item android:id="@+id/bot_nav_india_timeline"
+        android:title="India Timeline"
+        android:icon="@drawable/ic_timeline_black_24dp"
+        android:iconTint="@color/Grey4"/>
+
+    <item android:id="@+id/bot_nav_india_state"
+        android:title="India State"
+        android:icon="@drawable/ic_location_city_black_24dp"
+        android:iconTint="@color/Grey4"/>
+</menu>

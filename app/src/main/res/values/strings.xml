@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">CovidApp</string>
+
+    <string-array name="globel_items">
+        <item>Total Cases</item>
+        <item>New Cases</item>
+        <item>Total Deaths</item>
+        <item>New Deaths</item>
+        <item>Total Recovered</item>
+        <item>Active Cases</item>
+        <item>Serious Critical</item>
+        <item>Total Cases per 1m population</item>
+        <item>Deaths per 1m population</item>
+    </string-array>
+
+    <string-array name="expandable_list_items">
+        <item>Maharashtra</item>
+        <item>Gujarat</item>
+        <item>Delhi</item>
+        <item>Rajasthan</item>
+        <item>Madhya Pradesh</item>
+        <item>Tamil Nadu</item>
+        <item>Uttar Pradesh</item>
+        <item>Andhra Pradesh</item>
+        <item>Telangana</item>
+        <item>West Bengal</item>
+        <item>Jammu and Kashmir</item>
+        <item>Karnataka</item>
+        <item>Kerala</item>
+        <item>Bihar</item>
+        <item>Punjab</item>
+        <item>Haryana</item>
+        <item>Odisha</item>
+        <item>Jharkhand</item>
+        <item>Chandigarh</item>
+        <item>Uttarakhand</item>
+        <item>Himachal Pradesh</item>
+        <item>Assam</item>
+        <item>Chhattisgarh</item>
+        <item>Andaman and Nicobar Islands</item>
+        <item>Ladakh</item>
+        <item>Meghalaya</item>
+        <item>Puducherry</item>
+        <item>Goa</item>
+        <item>Manipur</item>
+        <item>Tripura</item>
+        <item>Mizoram</item>
+        <item>Arunachal Pradesh</item>
+        <item>Nagaland</item>
+        <item>Dadra and Nagar Haveli</item>
+        <item>Daman and Diu</item>
+        <item>Lakshadweep</item>
+        <item>Sikkim</item>
+    </string-array>
+</resources>
