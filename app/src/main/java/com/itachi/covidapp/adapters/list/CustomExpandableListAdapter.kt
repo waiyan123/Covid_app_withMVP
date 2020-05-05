@@ -33,11 +33,11 @@ class CustomExpandableListAdapter(
         convertView: View?, parent: ViewGroup?
     ): View {
         val view = LayoutInflater.from(mContext).inflate(R.layout.list_item, parent, false)
-        view.tv_active.text = "Active - "+voList[expandedListPosition].active
-        view.tv_confirmed.text = "Confirmed - "+voList[expandedListPosition].confirmed
-        view.tv_deaths.text = "Deaths - "+voList[expandedListPosition].deaths
-        view.tv_recovered.text = "Recovered - "+voList[expandedListPosition].recovered
-        view.tv_lastupdatedtime.text = "Last updated time - "+voList[expandedListPosition].lastupdatedtime
+        view.tv_active.text = "Active - "+voList[listPosition].active
+        view.tv_confirmed.text = "Confirmed - "+voList[listPosition].confirmed
+        view.tv_deaths.text = "Deaths - "+voList[listPosition].deaths
+        view.tv_recovered.text = "Recovered - "+voList[listPosition].recovered
+        view.tv_lastupdatedtime.text = "Last updated time - "+voList[listPosition].lastupdatedtime
         return view
     }
 

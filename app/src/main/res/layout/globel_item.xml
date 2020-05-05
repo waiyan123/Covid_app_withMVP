@@ -3,21 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="10dp"
     android:layout_margin="10dp"
+    android:layout_rowWeight="1"
+    android:layout_columnWeight="1"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="6dp"
     >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorPrimaryLight"
         android:orientation="vertical">
     <TextView
         android:id="@+id/tv_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
+        android:padding="10dp"
         android:text="Header"
-        android:textColor="@color/Grey1"
+        android:background="@android:color/transparent"
+        android:textColor="@color/White"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
         />
@@ -26,10 +31,9 @@
         android:id="@+id/tv_body"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/Grey3"
         android:gravity="bottom"
-        android:padding="20dp"
-        android:textColor="@color/Grey1"
+        android:padding="10dp"
+        android:textColor="@color/White"
         android:text="Body"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"

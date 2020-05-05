@@ -28,6 +28,8 @@ class IndiaStateFragment(context : Context) : Fragment(),StateView{
 
     override fun showStateData(data: StatesVO) {
 
+        Log.d("test---","Maharash data "+data.Maharashtra.confirmed)
+        Log.d("test---","Gujarat data "+data.Gujarat.confirmed)
         val voList = ArrayList<StateVO>()
         voList.add(data.Maharashtra)
         voList.add(data.Gujarat)
